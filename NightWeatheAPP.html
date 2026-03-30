@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Premium Weather </title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    
+</head>
+<style>
+    body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.1; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+</style>
+<body class="relative pb-10">
+
+    <div id="star-container" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <div class="container relative z-10 py-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 text-center text-lg-start">
+                <div class="flex items-start justify-center lg:justify-start">
+                    <h1 class="text-[10rem] lg:text-[14rem] font-thin leading-none tracking-tighter">29</h1>
+                    <span class="text-4xl lg:text-6xl font-light mt-8 lg:mt-12">&deg;</span>
+                </div>
+                <div class="mt-4 px-2">
+                    <p id="clock" class="text-slate-400 text-xl font-light tracking-widest uppercase">10:10 AM</p>
+                    <h2 class="text-4xl font-bold mt-1">Mumbai</h2>
+                    <p class="text-2xl font-light text-slate-300">Clear Night</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                
+            </div>
+        </div>
+
+        <div class="glass-card rounded-[2.5rem] p-4 lg:p-8 mb-4">
+            <h3 class="text-slate-400 text-sm uppercase tracking-widest mb-4 px-2">Hourly Forecast</h3>
+            <div class="flex justify-between items-center overflow-x-auto gap-8 no-scrollbar px-2">
+                <div class="text-center min-w-[60px]"><p class="text-slate-400 text-xs mb-2">Now</p><i class="fa-solid fa-moon mb-2 text-xl"></i><p class="font-bold">29&deg;</p></div>
+                <div class="text-center min-w-[60px]"><p class="text-slate-400 text-xs mb-2">11 PM</p><i class="fa-solid fa-moon mb-2 text-xl"></i><p class="font-bold">28&deg;</p></div>
+                <div class="text-center min-w-[60px]"><p class="text-slate-400 text-xs mb-2">12 AM</p><i class="fa-solid fa-cloud-moon mb-2 text-xl"></i><p class="font-bold">27&deg;</p></div>
+                <div class="text-center min-w-[60px]"><p class="text-slate-400 text-xs mb-2">1 AM</p><i class="fa-solid fa-cloud-moon mb-2 text-xl"></i><p class="font-bold">27&deg;</p></div>
+                <div class="text-center min-w-[60px]"><p class="text-slate-400 text-xs mb-2">2 AM</p><i class="fa-solid fa-cloud mb-2 text-xl text-slate-500"></i><p class="font-bold">26&deg;</p></div>
+                <div class="text-center min-w-[60px]"><p class="text-slate-400 text-xs mb-2">3 AM</p><i class="fa-solid fa-cloud mb-2 text-xl text-slate-500"></i><p class="font-bold">25&deg;</p></div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="glass-card rounded-[2.5rem] p-6 h-full">
+                    <h3 class="text-slate-400 text-sm uppercase tracking-widest mb-4">7-Day Forecast</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                            <span class="w-20">Today</span><i class="fa-solid fa-moon text-yellow-200"></i><span class="font-semibold">35&deg; <span class="text-slate-500 font-normal ml-2">25&deg;</span></span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                            <span class="w-20">Sun</span><i class="fa-solid fa-sun text-orange-400"></i><span class="font-semibold">36&deg; <span class="text-slate-500 font-normal ml-2">26&deg;</span></span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                            <span class="w-20">Mon</span><i class="fa-solid fa-cloud-sun text-slate-400"></i><span class="font-semibold">34&deg; <span class="text-slate-500 font-normal ml-2">24&deg;</span></span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="w-20">Tue</span><i class="fa-solid fa-cloud-showers-heavy text-blue-400"></i><span class="font-semibold">30&deg; <span class="text-slate-500 font-normal ml-2">22&deg;</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="glass-card rounded-3xl p-4 text-center">
+                            <p class="text-xs text-slate-400 uppercase mb-2">Humidity</p>
+                            <p class="text-2xl font-semibold">64%</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="glass-card rounded-3xl p-4 text-center">
+                            <p class="text-xs text-slate-400 uppercase mb-2">UV Index</p>
+                            <p class="text-2xl font-semibold">0 Low</p>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="glass-card rounded-3xl p-4 flex justify-between items-center">
+                            <div><p class="text-xs text-slate-400 uppercase">Wind</p><p class="text-xl font-semibold">12 km/h</p></div>
+                            <i class="fa-solid fa-wind text-3xl text-slate-500"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+        setInterval(updateClock, 1000); updateClock();
+
+        const starContainer = document.getElementById('star-container');
+        for (let i = 0; i < 200; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            const size = Math.random() * 2 + 1;
+            star.style.width = `${size}px`; star.style.height = `${size}px`;
+            star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+            starContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
