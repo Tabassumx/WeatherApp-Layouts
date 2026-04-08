@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transparent Weather Loader</title>
+<link rel="stylesheet" href="loading.css">
+</head>
+<body>
+
+<div id="loading" class="loading-state sunny-cloud">
+  <div class="sky">
+    <div class="sun"></div>
+    <div class="cloud main"></div>
+    <div class="cloud small"></div>
+    <div class="rain">
+      <div class="drop"></div><div class="drop"></div><div class="drop"></div><div class="drop"></div>
+    </div>
+    <div class="snow">
+      <div class="flake"></div><div class="flake"></div><div class="flake"></div><div class="flake"></div>
+    </div>
+    <div class="lightning"></div>
+  </div>
+  <div class="weather-label" id="weatherLabel">Sunny Cloud</div>
+  <div class="loading-text">Syncing Weather<span class="dots"></span></div>
+  <div class="loading-subtext">Fetching real-time data for your location</div>
+</div>
+
+<script scr="loading.js"></script>
+
+
+</body>
+</html>
