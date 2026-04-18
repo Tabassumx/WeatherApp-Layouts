@@ -1,9 +1,9 @@
-# 🌌 Atmos Weather App
+# ⛅ Atmos Weather App
 
 A modern, aesthetic weather application focused on **clean UI, intentional motion, and scalable layout systems**.
 Built as a **design-first frontend project**, where visual hierarchy and interaction are treated as core functionality.
 
-🔗 **Live Demo:** [https://atmosweathert.netlify.app/](https://atmosweathert.netlify.app/)
+🔗 **Live Demo:** [https://atmosweathert.netlify.app/](https://atmosweathert.netlify.app/) 
 
 ---
 
