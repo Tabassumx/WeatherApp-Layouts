@@ -22,7 +22,9 @@ Built as a **design-first frontend project**, where visual hierarchy and interac
 
 ## 🎥 Preview
 
-> Add GIFs here (highly recommended for recruiters)
+> <img width="1353" height="768" alt="weatherN" src="https://github.com/user-attachments/assets/5d0089fb-b695-4d64-8848-8168da8774db" />
+<img width="1353" height="768" alt="chrome_UVAShoGQRQ" src="https://github.com/user-attachments/assets/337a7cc7-b3ee-4137-bd3f-9549f66f1004" />
+
 
 * UI Walkthrough
 * Loading Animation
