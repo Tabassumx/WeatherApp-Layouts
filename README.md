@@ -131,15 +131,6 @@ navigator.geolocation.getCurrentPosition((pos) => {
 
 ---
 
-## 🚀 Local Setup
-
-```bash
-git clone https://github.com/your-username/weather-app.git
-cd weather-app
-open weather.html
-```
-
----
 
 ## 📊 Performance & UX Focus
 
